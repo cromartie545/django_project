@@ -1,5 +1,9 @@
 {% extends "blog/base.html" %}
+{% load static %}
 {% block content %}
+    <img src="{% static 'pictures/image.jpg' %}" width='100' height='100' alt="image">
+    <img src="{% static 'pictures/image1.jpg'  %}" width='100' height='100' alt="image1">
+    <img src="{% static 'pictures/image2.jpg'  %}" width='100' height='100' alt="image2">
     {% for post in posts %}
         <article class="media content-section">
           <div class="media-body">
