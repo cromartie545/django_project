@@ -48,7 +48,7 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now = True)
     status =models.CharField(max_length = 2, choices = Status, default = Status.DRAFT)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE,
-                               related_name='blog_posts')
+                               related_nametim='blog_posts')
     class Meta:
         ordering = ('-publish',)
         db_table = 'title'
