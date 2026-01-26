@@ -21,7 +21,7 @@ class Employee(models.Model):
 
     class Meta:
         ordering = ['last_name', 'first_name']
-        db_table = "employee"
+        #db_table = "employee"
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
@@ -51,7 +51,7 @@ class Post(models.Model):
                                related_name='blog_posts')
     class Meta:
         ordering = ('-publish',)
-        #db_table = 'title'
+        db_table = 'title'
     indxs = [
         models.Index(fields=['-publish'])
     ]

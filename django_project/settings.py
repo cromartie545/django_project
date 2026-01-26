@@ -41,6 +41,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.db.models.BigAutoField',
 ]
 
 ROOT_URLCONF = 'django_project.urls'
@@ -125,3 +126,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL='blog-home'
 
 LOGIN_URL = 'login'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
