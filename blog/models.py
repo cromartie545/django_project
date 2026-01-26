@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.conf import settings
-
+'''
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
@@ -11,7 +11,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
+'''
 class Employee(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -48,10 +48,10 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now = True)
     status =models.CharField(max_length = 2, choices = Status, default = Status.DRAFT)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE,
-                               related_nametim='blog_posts')
+                               related_name='blog_posts')
     class Meta:
         ordering = ('-publish',)
-        db_table = 'title'
+        #db_table = 'title'
     indxs = [
         models.Index(fields=['-publish'])
     ]
