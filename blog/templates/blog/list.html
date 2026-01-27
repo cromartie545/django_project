@@ -1,0 +1,13 @@
+{% extends 'blog/base.html %}
+{% load static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+  {% for post in posts %}
+  {{ post.title }}
+  <br>
+  {% endfor %}
+{% endblock %}

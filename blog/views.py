@@ -9,6 +9,10 @@ def home(request):
     }
     return render(request, 'blog/home.html', context)
 
+def post_list(request):
+    posts= Post.published.all()
+
+    return render(request,'blog/list.html',{'posts':posts})
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})

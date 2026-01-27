@@ -22,5 +22,6 @@ urlpatterns = [
     path('deletecounter/', views.deletecounter, name='delete-counter'),
     path('setmultiplekeys/', views.setmultiplekeys, name='set-multiple-keys'),
     path('getmultiplekeys/', views.getmultiplekeys, name='get-multiple-keys'),
-    path('deletemultiplekeys/', views.deletemultiplekeys, name='delete-multiple-keys'), 
+    path('deletemultiplekeys/', views.deletemultiplekeys, name='delete-multiple-keys'),
+    path('list/',views.post_list, name='list') 
 ]    
