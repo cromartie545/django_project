@@ -33,7 +33,11 @@ class Student(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
-
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return(
+            super().get_queryset().filter(status=Post.Status.PUBLISHED)
+        )
 
 class Post(models.Model):
     class Status(models.TextChoices):
@@ -49,12 +53,16 @@ class Post(models.Model):
     status =models.CharField(max_length = 2, choices = Status, default = Status.DRAFT)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE,
                                related_name='blog_posts')
+    objects = models.Manager()    # The default manager.
+    published = PublishedManager() # Custom manager
     class Meta:
         ordering = ('-publish',)
         db_table = 'title'
-    indxs = [
+    indexes = [
         models.Index(fields=['-publish'])
     ]
+
+
 
     def __str__(self):
         return self.title

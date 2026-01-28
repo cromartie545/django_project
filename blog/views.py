@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Post
 from django.http import HttpResponse
+from django.http import Http404
 
 
 def home(request):
@@ -91,3 +92,10 @@ def deletemultiplekeys(request):
     except KeyError:
         pass
     return HttpResponse("Multiple session keys deleted: key1 and key2") 
+
+def post_detail(request, id):
+    try:
+        post = Post.published.get(id = id) 
+    except Post.DoesNotExist: 
+        Http404('No Post Found.')
+    return render(request, 'blog/detail.html',{'post':post})

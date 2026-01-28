@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+  
+  {% for p in post %}
+    <link rel="stylesheet" href="{% url 'detail' p.id %}">
+  {% endfor %}  
+  
+{% endblock %}
