@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseNotFound
+import random
+
 
 monthly_challenges = {
     'January':  "Do strenth exercises on Tuesday at 3:00 PM.",
@@ -20,6 +22,7 @@ monthly_challenges = {
 
 def monthly_challenge(request):
     month = request.GET.get('month')
+    
     '''
     try:
         challenge_text = monthly_challenges[month]
