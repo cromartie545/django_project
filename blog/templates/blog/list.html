@@ -7,7 +7,9 @@
 
 {% block content %}
   {% for post in posts %}
-  {{ post.title }}
+  <a href="{% url 'post_detail' post.id %}">
+    {{ post.title }}
+  </a>
   <br>
   {% endfor %}
 {% endblock %}

@@ -1,14 +1,14 @@
 {% extends 'blog/base.html' %}
 {% load static %}
-
-{% block title %}
-
+ {% block title %}
+ {{ post.title }}
+ 
 {% endblock %}
 
 {% block content %}
-  
-  {% for p in post %}
-    <link rel="stylesheet" href="{% url 'detail' p.id %}">
-  {% endfor %}  
-  
+    <h1>{{ post.title }}</h1>
+    <br>
+    Published: {{ post.publish }} by {{post.author}}
+    <br>
+    {{ post.body|linebreaks }}
 {% endblock %}

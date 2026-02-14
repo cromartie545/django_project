@@ -23,5 +23,6 @@ urlpatterns = [
     path('setmultiplekeys/', views.setmultiplekeys, name='set-multiple-keys'),
     path('getmultiplekeys/', views.getmultiplekeys, name='get-multiple-keys'),
     path('deletemultiplekeys/', views.deletemultiplekeys, name='delete-multiple-keys'),
-    path('list/',views.post_list, name='list') 
+    path('list/',views.post_list, name='list'), 
+    path('detail/<int:id>/',views.post_detail, name='post_detail'),
 ]    
