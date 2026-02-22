@@ -35,7 +35,7 @@
             <div class="navbar-nav">
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-                <form class="form-inline" method="POST" action="{% url 'logout' %}">
+                <form class="form-inline" method="POST" action="{% url 'logout' %}"> <!-- logout must be set to form.-->  
                   {% csrf_token %}
                   <button class="btn btn-link nav-item nav-link" type="submit">Logout</button>
                 </form>
